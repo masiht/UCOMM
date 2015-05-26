@@ -1,4 +1,4 @@
-package com.javacodegeeks.enterprise.rest.jersey;
+package com.att.ucomm;
 
 public class Student {
 

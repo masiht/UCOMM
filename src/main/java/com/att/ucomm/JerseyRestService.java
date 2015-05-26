@@ -1,4 +1,4 @@
-package com.javacodegeeks.enterprise.rest.jersey;
+package com.att.ucomm;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
