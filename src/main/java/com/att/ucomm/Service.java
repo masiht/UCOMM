@@ -9,17 +9,18 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-@Path("/jsonServices")
-public class JerseyRestService {
 
+@Path("/jobService")
+public class Service {
+	
 	@GET
-	@Path("/print/{name}")
+	@Path("/{techId}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Student produceJSON( @PathParam("name") String name ) {
+	public Job produceJSON( @PathParam("techId") String techId ) {
 
-		Student st = new Student(name, "Diaz",22,1);
+		Job j1 = new Job(techId, 1234, 420, "WIP", "installation");
 
-		return st;
+		return j1;
 
 	}
 
