@@ -23,7 +23,7 @@ public class Service {
 	@GET
 	@Path("/{techId}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public List currentJobs( @PathParam("techId") String techId ) {
+	public List<Job> currentJobs( @PathParam("techId") String techId ) {
 		
 		// data base interactions
 		//
