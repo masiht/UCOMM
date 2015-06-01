@@ -100,8 +100,8 @@ public class Job {
 		return new StringBuffer(" Tech ID : ").append(this.techId)
 				.append(" BAN : ").append(this.ban)
 				.append(" Job ID : ").append(this.jobId)
-				.append(" Date: ").append(this.day)
-				.append(" Start: ").append(this.startDate)
+				.append(" Date : ").append(this.day)
+				.append(" Start : ").append(this.startDate)
 				.append(" End: ").append(this.endDate)
 				.append(" Status : ").append(this.status)
 				.append(" Job Type : ").append(this.jobType).toString();
