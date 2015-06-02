@@ -8,9 +8,9 @@ public class Job {
 	private String techId;
 	private int ban;
 	private int jobId;
-	private Date day;
-	private Date startDate;
-	private Date endDate;
+	private String day;
+	private String startDate;
+	private String endDate;
 	private String status;
 	private String jobType;
 	
@@ -19,7 +19,7 @@ public class Job {
 
 	}
 
-	public Job(String techid, int ban, int jobid, Date day, Date sDate, Date eDate, String status, String jobtype) {
+	public Job(String techid, int ban, int jobid, String day, String sDate, String eDate, String status, String jobtype) {
 		this.techId = techid;
 		this.ban = ban;
 		this.jobId = jobid;
@@ -42,27 +42,27 @@ public class Job {
 		this.ban = ban;
 	}
 	
-	public void setDay(Date day) {
+	public void setDay(String day) {
 		this.day = day;
 	}
 	
-	public Date getDay() {
+	public String getDay() {
 		return this.day;
 	}
 	
-	public void setStartDate(Date sDate) {
+	public void setStartDate(String sDate) {
 		this.startDate = sDate;
 	}
 	
-	public Date getStartDate() {
+	public String getStartDate() {
 		return this.startDate;
 	}
 	
-	public void setEndDate(Date eDate) {
+	public void setEndDate(String eDate) {
 		this.endDate = eDate;
 	}
 	
-	public Date getEndDate() {
+	public String getEndDate() {
 		return this.endDate;
 	}
 
