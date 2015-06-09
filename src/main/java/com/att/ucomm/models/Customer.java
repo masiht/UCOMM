@@ -5,17 +5,19 @@ public class Customer {
 	private String name;
 	private int ban;
 	private String address;
-	private String location;
+	private double latitude;
+	private double longitude;
 
 	public Customer() {
 		
 	}
 	
-	public Customer(String name, int ban, String address, String location) {
+	public Customer(String name, int ban, String address, double lat, double lon) {
 		this.name = name;
 		this.ban = ban;
 		this.address = address;
-		this.location = location;
+		this.latitude = lat;
+		this.longitude = lon;
 	}
 	
 	public void setName(String name) {
@@ -42,12 +44,20 @@ public class Customer {
 		return this.address;
 	}
 	
-	public void setLocation(String location) {
-		this.location = location;
+	public void setLatitude(double lat) {
+		this.latitude = lat;
 	}
 	
-	public String getLocation() {
-		return this.location;
+	public double getLatitude() {
+		return this.latitude;
+	}
+	
+	public void setLongitude(double lon) {
+		this.longitude = lon;
+	}
+	
+	public double getLongitude() {
+		return this.longitude;
 	}
 	
 	@Override
@@ -55,7 +65,8 @@ public class Customer {
 		return new StringBuffer(" Name : ").append(this.name)
 				.append(" BAN : ").append(this.ban)
 				.append(" Address : ").append(this.address)
-				.append(" Location : ").append(this.location).toString();
+				.append(" Latitude : ").append(this.latitude)
+				.append(" Longitude : ").append(this.longitude).toString();
 	}
 	
 }

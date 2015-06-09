@@ -4,7 +4,8 @@ public class Tech {
 	
 	private String name;
 	private String techId;
-	private String location;
+	private double latitude;
+	private double longitude;
 	private int availability;
 	private String coc;
 
@@ -12,11 +13,12 @@ public class Tech {
 		
 	}
 	
-	public Tech(String name, String id, String location, int avlbty, String coc) {
+	public Tech(String name, String id, double lat, double lon, int avlbty, String coc) {
 		
 		this.name = name;
 		this.techId = id;
-		this.location = location;
+		this.latitude = lat;
+		this.longitude = lon;
 		this.availability = avlbty;
 		this.coc = coc;
 	}
@@ -37,12 +39,20 @@ public class Tech {
 		return this.techId;
 	}
 	
-	public void setLocation(String location) {
-		this.location = location;
+	public void setLatitude(double lat) {
+		this.latitude = lat;
 	}
 	
-	public String getLocation() {
-		return this.location;
+	public double getLatitude() {
+		return this.latitude;
+	}
+	
+	public void setLongitude(double lon) {
+		this.longitude = lon;
+	}
+	
+	public double getLongitude() {
+		return this.longitude;
 	}
 	
 	public void setAvailability(int avlbty) {
@@ -66,7 +76,8 @@ public class Tech {
 	public String toString() {
 		return new StringBuffer(" Name : ").append(this.name)
 				.append(" Tech ID : ").append(this.techId)
-				.append(" Location : ").append(this.location)
+				.append(" Latitude : ").append(this.latitude)
+				.append(" Longitude : ").append(this.longitude)
 				.append(" Availability : ").append(this.availability)
 				.append(" Coc : ").append(this.coc).toString();
 	}
