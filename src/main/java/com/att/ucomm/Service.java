@@ -42,7 +42,7 @@ public class Service {
 					jobsforATech.add(j);
 				}
 			}
-			jobMap.put(t.getId(), jobsforATech);
+			jobMap.put(t.getName(), jobsforATech);
 		}
 
 		return jobMap;
