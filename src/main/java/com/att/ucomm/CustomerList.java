@@ -43,9 +43,9 @@ public class CustomerList {
 	
 	public void loadData() {
 		
-		Customer c1 = new Customer("Customer1", 1234, "SomeWhere", 40.414830, -74.229589);
-		Customer c2 = new Customer("Customer2", 5678, "SomeWhere", 40.430450, -74.254159);
-		Customer c3 = new Customer("Customer3", 1000, "SomeWhere", 40.410450, -74.234159);
+		Customer c1 = new Customer("Customer1", 1234, "SomeWhere", "40.414830", "-74.229589");
+		Customer c2 = new Customer("Customer2", 5678, "SomeWhere", "40.430450", "-74.254159");
+		Customer c3 = new Customer("Customer3", 1000, "SomeWhere", "40.410450", "-74.234159");
 		allCustomers.add(c1);
 		allCustomers.add(c2);
 		allCustomers.add(c3);

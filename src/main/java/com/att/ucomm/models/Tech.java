@@ -4,8 +4,8 @@ public class Tech {
 	
 	private String name;
 	private String techId;
-	private double latitude;
-	private double longitude;
+	private String latitude;
+	private String longitude;
 	private int availability;
 	private String coc;
 
@@ -13,7 +13,7 @@ public class Tech {
 		
 	}
 	
-	public Tech(String name, String id, double lat, double lon, int avlbty, String coc) {
+	public Tech(String name, String id, String lat, String lon, int avlbty, String coc) {
 		
 		this.name = name;
 		this.techId = id;
@@ -39,19 +39,19 @@ public class Tech {
 		return this.techId;
 	}
 	
-	public void setLatitude(double lat) {
+	public void setLatitude(String lat) {
 		this.latitude = lat;
 	}
 	
-	public double getLatitude() {
+	public String getLatitude() {
 		return this.latitude;
 	}
 	
-	public void setLongitude(double lon) {
+	public void setLongitude(String lon) {
 		this.longitude = lon;
 	}
 	
-	public double getLongitude() {
+	public String getLongitude() {
 		return this.longitude;
 	}
 	

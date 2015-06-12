@@ -13,13 +13,14 @@ public class Job {
 	private String endDate;
 	private String status;
 	private String jobType;
+	private String availability;
 	
 
 	public Job() {
 
 	}
 
-	public Job(String techid, int ban, int jobid, String day, String sDate, String eDate, String status, String jobtype) {
+	public Job(String techid, int ban, int jobid, String day, String sDate, String eDate, String status, String jobtype, String availability) {
 		this.techId = techid;
 		this.ban = ban;
 		this.jobId = jobid;
@@ -28,6 +29,7 @@ public class Job {
 		this.endDate = eDate;
 		this.status = status;
 		this.jobType = jobtype;
+		this.availability = availability;
 	}
 
 	public void setTechId(String techid) {
@@ -40,6 +42,10 @@ public class Job {
 	
 	public void setBan(int ban) {
 		this.ban = ban;
+	}
+	
+	public int getBan() {
+		return this.ban;
 	}
 	
 	public void setDay(String day) {
@@ -66,9 +72,6 @@ public class Job {
 		return this.endDate;
 	}
 
-	public int getBan() {
-		return this.ban;
-	}
 	
 	public void setjobId(int jobid) {
 		this.jobId = jobid;
@@ -94,6 +97,14 @@ public class Job {
 		return this.jobType;
 	}
 	
+	public void setAvailability(String availability) {
+		this.availability = availability;
+	}
+	
+	public String getAvailability() {
+		return this.availability;
+	}
+	
 
 	@Override
 	public String toString() {
@@ -104,7 +115,8 @@ public class Job {
 				.append(" Start : ").append(this.startDate)
 				.append(" End: ").append(this.endDate)
 				.append(" Status : ").append(this.status)
-				.append(" Job Type : ").append(this.jobType).toString();
+				.append(" Job Type : ").append(this.jobType)
+				.append(" Availability : ").append(this.availability).toString();
 	}
 
 }

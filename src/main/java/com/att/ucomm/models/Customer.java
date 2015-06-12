@@ -5,14 +5,14 @@ public class Customer {
 	private String name;
 	private int ban;
 	private String address;
-	private double latitude;
-	private double longitude;
+	private String latitude;
+	private String longitude;
 
 	public Customer() {
 		
 	}
 	
-	public Customer(String name, int ban, String address, double lat, double lon) {
+	public Customer(String name, int ban, String address, String lat, String lon) {
 		this.name = name;
 		this.ban = ban;
 		this.address = address;
@@ -44,19 +44,19 @@ public class Customer {
 		return this.address;
 	}
 	
-	public void setLatitude(double lat) {
+	public void setLatitude(String lat) {
 		this.latitude = lat;
 	}
 	
-	public double getLatitude() {
+	public String getLatitude() {
 		return this.latitude;
 	}
 	
-	public void setLongitude(double lon) {
+	public void setLongitude(String lon) {
 		this.longitude = lon;
 	}
 	
-	public double getLongitude() {
+	public String getLongitude() {
 		return this.longitude;
 	}
 	

@@ -64,16 +64,16 @@ public class Service {
 	public void loadData() {
 		// data base interactions
 		//
-		Job j1 = new Job("tm1038", 1234, 420, "06-02-2015", "04:00", "05:00", "WIP", "installation");
-		Job j2 = new Job("mk1017", 4567, 421, "06-02-2015", "04:00", "05:00", "WIP", "repair");
+		Job j1 = new Job("tm1038", 1234, 420, "06-02-2015", "04:00", "05:00", "WIP", "Installation", "0");
+		Job j2 = new Job("mk1017", 4567, 421, "06-02-2015", "04:00", "05:00", "WIP", "Repair", "1");
 		
 		allJobs.add(j1);
 		allJobs.add(j2);
 
 		// load Teches
-		Tech t1 = new Tech("Mark Hughes", "tm1038", 40.397549, -74.135592, 0, "jj0000");
-		Tech t2 = new Tech("Marry Molehill", "mk1017", 40.384170, -74.161266, 1, "jj0000");
-		Tech t3 = new Tech("Richard Nelson", "ll1010", 40.364170, -74.191266, 2, "jj0000");
+		Tech t1 = new Tech("Mark Hughes", "tm1038", "40.397549", "-74.135592", 0, "jj0000");
+		Tech t2 = new Tech("Marry Molehill", "mk1017", "40.384170", "-74.161266", 1, "jj0000");
+		Tech t3 = new Tech("Richard Nelson", "ll1010", "40.364170", "-74.191266", 2, "jj0000");
 		
 		allTeches.add(t1);
 		allTeches.add(t2);
