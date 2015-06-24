@@ -12,6 +12,7 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import com.att.ucomm.controllers.DatabaseController;
 import com.att.ucomm.models.Job;
 import com.att.ucomm.models.Tech;
 
@@ -20,9 +21,7 @@ import com.att.ucomm.models.Tech;
 @Path("/jobService")
 public class Service {
 	
-	ArrayList<Job> jobList = new ArrayList<Job>();
-	List<Tech> allTeches = new ArrayList<Tech>();
-	List<Job> allJobs = new ArrayList<Job>();
+	ArrayList<Tech> allTechs = new ArrayList<Tech>(); 
 	
 	@GET
 	@Path("/{id}")
@@ -30,13 +29,13 @@ public class Service {
 	public HashMap<String, ArrayList<Job>> currentJobs( @PathParam("id") String id ) {
 		
 		HashMap<String, ArrayList<Job>> jobMap = new HashMap<String, ArrayList<Job>>();
-		
-		loadData();
+		DatabaseController db = new DatabaseController();
+		allTechs = db.loadTechs();
 		
 		// iterate thru teches for all jobs
 		for (Tech t : techForCoc(id)) {
 			ArrayList<Job> jobsforATech = new ArrayList<Job>();
-			for (Job j : allJobs) {
+			for (Job j : db.loadJobs()) {
 				if (j.getTechId().equals(t.getId())) {
 					
 					jobsforATech.add(j);
@@ -49,10 +48,10 @@ public class Service {
 
 	}
 	
-	/*Helper method to get list of Teches given COC */
+	/*Helper method to get list of Techs given COC */
 	public List<Tech> techForCoc(String coc) {
 		List<Tech> foundTeches = new ArrayList<Tech>();
-		for (Tech t : allTeches) {
+		for (Tech t : allTechs) {
 			if (t.getCoc().equals(coc)) {
 				foundTeches.add(t);
 			}
@@ -61,24 +60,5 @@ public class Service {
 	}
 	
 	
-	public void loadData() {
-		// data base interactions
-		//
-		Job j1 = new Job("tm1038", 1234, 420, "06-02-2015", "04:00", "05:00", "WIP", "Installation", "0");
-		Job j2 = new Job("mk1017", 4567, 421, "06-02-2015", "04:00", "05:00", "WIP", "Repair", "1");
-		
-		allJobs.add(j1);
-		allJobs.add(j2);
-
-		// load Teches
-		Tech t1 = new Tech("Mark Hughes", "tm1038", "40.397549", "-74.135592", 0, "jj0000");
-		Tech t2 = new Tech("Marry Molehill", "mk1017", "40.384170", "-74.161266", 1, "jj0000");
-		Tech t3 = new Tech("Richard Nelson", "ll1010", "40.364170", "-74.191266", 2, "jj0000");
-		
-		allTeches.add(t1);
-		allTeches.add(t2);
-		allTeches.add(t3);
-		
-	}
 
 }

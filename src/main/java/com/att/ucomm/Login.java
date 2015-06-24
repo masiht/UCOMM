@@ -16,7 +16,7 @@ import com.att.ucomm.controllers.*;
 @Path("/login")
 public class Login {
 	
-	Map<String, String> users = new HashMap<String, String>();
+//	Map<String, String> users = new HashMap<String, String>();
 	
 	
 	@POST
@@ -27,9 +27,9 @@ public class Login {
 	// retrieve user map from database
 
 		DatabaseController db = new DatabaseController();
-		users = db.user();
+//		users = db.user();
 	
-	for (Map.Entry<String, String> user : users.entrySet()) {
+	for (Map.Entry<String, String> user : db.user().entrySet()) {
 		if ( id.equals(user.getKey()) && pass.equals(user.getValue())) {
 			return true;
 		}
