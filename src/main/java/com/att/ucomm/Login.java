@@ -11,6 +11,7 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import com.att.ucomm.controllers.*;
 
 @Path("/login")
 public class Login {
@@ -23,16 +24,16 @@ public class Login {
 	@Produces(MediaType.APPLICATION_JSON)
 	public boolean isUserValid( @PathParam("id") String id, @PathParam("pass") String pass) {
 	
-	// populate user map from database
-	users.put("kaveh", "att");
-	users.put("masih", "masih");
+	// retrieve user map from database
+
+		DatabaseController db = new DatabaseController();
+		users = db.user();
 	
 	for (Map.Entry<String, String> user : users.entrySet()) {
 		if ( id.equals(user.getKey()) && pass.equals(user.getValue())) {
 			return true;
 		}
 	}
-	
 	
 	
 	return false;
