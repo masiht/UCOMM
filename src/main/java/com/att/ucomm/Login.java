@@ -19,24 +19,24 @@ public class Login {
 //	Map<String, String> users = new HashMap<String, String>();
 	
 	
-	@POST
+	@GET
 	@Path("/{id}/{pass}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public boolean isUserValid( @PathParam("id") String id, @PathParam("pass") String pass) {
+	public HashMap<String, Boolean> isUserValid(@PathParam("id") String id, @PathParam("pass") String pass) {
 	
 	// retrieve user map from database
 
 		DatabaseController db = new DatabaseController();
 //		users = db.user();
+		HashMap<String, Boolean> validation = new HashMap<String, Boolean>();
+		validation.put("isValid", false);
 	
 	for (Map.Entry<String, String> user : db.user().entrySet()) {
 		if ( id.equals(user.getKey()) && pass.equals(user.getValue())) {
-			return true;
+			validation.put("isValid", true);
 		}
 	}
-	
-	
-	return false;
+	return validation;
 	}
 
 }
